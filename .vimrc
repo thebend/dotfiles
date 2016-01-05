@@ -7,7 +7,7 @@ set number relativenumber
 " Interface
 set ruler
 set showcmd
-set wildmenu wildnode=list:longest,full
+set wildmenu wildmode=list:longest,full
 set autoread
 set showmatch
 
@@ -18,7 +18,7 @@ set textwidth=80 linebreak
 filetype plugin indent on
 syntax enable
 colorscheme solarized
-" set background=dark
+set background=dark
 
 " Searching
 set hlsearch
@@ -26,19 +26,25 @@ set incsearch wrapscan
 set ignorecase smartcase
 
 " Plugins
-execute pathogen#infect()		" Auto-import ~/.vim/bundle/*/ plugins
+" Auto-import ~/.vim/bundle/*/ plugins
+execute pathogen#infect()
 Helptags
 
 " Airline
 let g:airline_powerline_fonts=1
-let g:airline_theme="tomorrow"
-set laststatus=2			" Always enable status bar
+" let g:airline_theme="tomorrow"
+let g:airline_theme="papercolor"
+" Always enable status bar
+set laststatus=2
 
 " Shortcuts
 nnoremap <F2> :NERDTreeToggle<CR>
-nnoremap <CR> o<Esc>			" Insert newline below
-nnoremap <Tab> <c-w>l			" Switch to next pane
-nnoremap <S-Tab> <c-w>h			" Switch to previous pane
+" Insert newline below
+nnoremap <CR> o<Esc>
+" Switch to next pane
+nnoremap <Tab> <c-w>l
+" Switch to previous pane
+nnoremap <S-Tab> <c-w>h
 
 " Close vime ntirely if only NERDTree left
 function! s:CloseIfOnlyControlWinLeft()
