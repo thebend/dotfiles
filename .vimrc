@@ -14,7 +14,12 @@ set showmatch
 " Formatting
 set list listchars=tab:\»\ ,trail:·
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
-set textwidth=80 linebreak
+set colorcolumn=72
+set wrap
+" Don't auto-insert comment leader characters on o/O commands
+autocmd BufNewFile,BufRead,BufWinEnter * setlocal formatoptions-=o
+
+" Syntax handling
 filetype plugin indent on
 syntax enable
 colorscheme solarized
@@ -45,6 +50,11 @@ nnoremap <CR> o<Esc>
 nnoremap <Tab> <c-w>l
 " Switch to previous pane
 nnoremap <S-Tab> <c-w>h
+" Move line to end of file and mark complete
+" Down one line, mark position, back up, cut line, go to end of file
+" paste line, go to beginning of line, insert "[X] "
+" go back to normal mode, return to mark
+nnoremap <F3> jmakddGp0i[X] <Esc>'a
 
 " Close vime ntirely if only NERDTree left
 function! s:CloseIfOnlyControlWinLeft()
