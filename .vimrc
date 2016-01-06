@@ -51,13 +51,8 @@ nnoremap <CR> o<Esc>
 nnoremap <Tab> <c-w>l
 " Switch to previous pane
 nnoremap <S-Tab> <c-w>h
-" Move line to end of file and mark complete
-" Down one line, mark position, back up, cut line, go to end of file
-" paste line, go to beginning of line, insert "[X] "
-" go back to normal mode, return to mark
-nnoremap <F3> jmakddGp0i[X] <Esc>'a
 
-" Close vime ntirely if only NERDTree left
+" Close vim entirely if only NERDTree left
 function! s:CloseIfOnlyControlWinLeft()
 	if winnr("$") != 1
 		return
