@@ -15,6 +15,7 @@ set showmatch
 set list listchars=tab:\»\ ,trail:·
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
 set colorcolumn=72
+autocmd FileType text setlocal colorcolumn=0
 set wrap
 " Don't auto-insert comment leader characters on o/O commands
 autocmd BufNewFile,BufRead,BufWinEnter * setlocal formatoptions-=o
