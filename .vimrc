@@ -29,10 +29,20 @@ set hlsearch
 set incsearch wrapscan
 set ignorecase smartcase
 
-" Plugins
-" Auto-import ~/.vim/bundle/*/ plugins
-execute pathogen#infect()
-Helptags
+" Vundle Plugins
+" Run BundleInstall to download/update plugins
+" Run bundleClean to remove undocumented plugins
+if has("win32")
+	set rtp+=~/vimfiles/bundle/vundle
+else
+	set rtp+=~/.vim/bundle/vundle
+endif
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'vim-airline/vim-airline'
+Bundle 'scrooloose/nerdtree'
+Bundle 'altercation/vim-colors-solarized'
 
 " Syntax handling
 filetype plugin indent on
