@@ -19,7 +19,10 @@ set colorcolumn=72
 autocmd FileType text setlocal colorcolumn=0
 set wrap
 " Don't auto-insert comment leader characters on o/O commands
-autocmd BufNewFile,BufRead,BufWinEnter * setlocal formatoptions-=o
+augroup NoAutoCommentLeaders
+	autocmd!
+	autocmd BufNewFile,BufRead,BufWinEnter * setlocal formatoptions-=o
+augroup END
 
 " Searching
 set hlsearch
@@ -31,7 +34,7 @@ set ignorecase smartcase
 execute pathogen#infect()
 Helptags
 
-"" Syntax handling
+" Syntax handling
 filetype plugin indent on
 syntax enable
 colorscheme solarized
@@ -64,8 +67,8 @@ function! s:CloseIfOnlyControlWinLeft()
 	endif
 endfunction
 augroup CloseIfOnlyControlWinLeft
-	au!
-	au BufEnter * call s:CloseIfOnlyControlWinLeft()
+	autocmd!
+	autocmd BufEnter * call s:CloseIfOnlyControlWinLeft()
 augroup END
 
 if has("win32")
