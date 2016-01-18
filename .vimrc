@@ -20,12 +20,6 @@ set wrap
 " Don't auto-insert comment leader characters on o/O commands
 autocmd BufNewFile,BufRead,BufWinEnter * setlocal formatoptions-=o
 
-" Syntax handling
-filetype plugin indent on
-syntax enable
-colorscheme solarized
-set background=dark
-
 " Searching
 set hlsearch
 set incsearch wrapscan
@@ -36,7 +30,13 @@ set ignorecase smartcase
 execute pathogen#infect()
 Helptags
 
-" Airline
+"" Syntax handling
+filetype plugin indent on
+syntax enable
+colorscheme solarized
+set background=dark
+
+ Airline
 let g:airline_powerline_fonts=1
 " let g:airline_theme="tomorrow"
 let g:airline_theme="papercolor"
