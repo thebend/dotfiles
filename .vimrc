@@ -67,3 +67,7 @@ augroup CloseIfOnlyControlWinLeft
 	au BufEnter * call s:CloseIfOnlyControlWinLeft()
 augroup END
 
+if has("win32")
+	map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+endif
+
