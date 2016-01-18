@@ -10,6 +10,7 @@ set showcmd
 set wildmenu wildmode=list:longest,full
 set autoread
 set showmatch
+set guifont=Inconsolata\ for\ Powerline:h12
 
 " Formatting
 set list listchars=tab:\»\ ,trail:·
@@ -36,7 +37,7 @@ syntax enable
 colorscheme solarized
 set background=dark
 
- Airline
+" Airline
 let g:airline_powerline_fonts=1
 " let g:airline_theme="tomorrow"
 let g:airline_theme="papercolor"
