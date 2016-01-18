@@ -32,11 +32,7 @@ set ignorecase smartcase
 " Vundle Plugins
 " Run BundleInstall to download/update plugins
 " Run bundleClean to remove undocumented plugins
-if has("win32")
-	set rtp+=~/vimfiles/bundle/vundle
-else
-	set rtp+=~/.vim/bundle/vundle
-endif
+set runtimepath+=~/.vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
