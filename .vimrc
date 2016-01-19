@@ -11,6 +11,7 @@ set wildmenu wildmode=list:longest,full
 set autoread
 set showmatch
 set guifont=Inconsolata\ for\ Powerline:h12
+set clipboard=unnamed
 
 " Formatting
 set list listchars=tab:\»\ ,trail:·
@@ -18,6 +19,7 @@ set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
 set colorcolumn=72
 autocmd FileType text setlocal colorcolumn=0
 set wrap
+set backspace=eol,start
 " Don't auto-insert comment leader characters on o/O commands
 augroup NoAutoCommentLeaders
 	autocmd!
