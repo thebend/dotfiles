@@ -41,6 +41,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'vim-airline/vim-airline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'PProvost/vim-ps1'
 
 " Syntax handling
 filetype plugin indent on
@@ -63,6 +64,10 @@ nnoremap <CR> o<Esc>
 nnoremap <Tab> <c-w>l
 " Switch to previous pane
 nnoremap <S-Tab> <c-w>h
+" Switch to next tab
+nnoremap <C-Tab> :tabn<CR>
+" Switch to previous tab
+nnoremap <C-S-Tab> :tabp<CR>
 
 " Close vim entirely if only NERDTree left
 function! s:CloseIfOnlyControlWinLeft()
@@ -82,4 +87,16 @@ augroup END
 if has("win32")
 	map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
 endif
+
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+
+autocmd BufNewFile,BufRead *.ps1 setfiletype ps1
 
