@@ -42,6 +42,9 @@ Bundle 'vim-airline/vim-airline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'PProvost/vim-ps1'
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'FuzzyFinder'
 
 " Syntax handling
 filetype plugin indent on
@@ -68,6 +71,8 @@ nnoremap <S-Tab> <c-w>h
 nnoremap <C-Tab> :tabn<CR>
 " Switch to previous tab
 nnoremap <C-S-Tab> :tabp<CR>
+" Fuzzy File Finder
+nnoremap <F3> :FufFile<CR>
 
 " Close vim entirely if only NERDTree left
 function! s:CloseIfOnlyControlWinLeft()
