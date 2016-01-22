@@ -42,6 +42,7 @@ Bundle 'vim-airline/vim-airline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'PProvost/vim-ps1'
+Bundle 'scrooloose/syntastic'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -56,6 +57,7 @@ set background=dark
 let g:airline_powerline_fonts=1
 " let g:airline_theme="tomorrow"
 let g:airline_theme="papercolor"
+let g:airline_theme="zenburn"
 " Always enable status bar
 set laststatus=2
 
