@@ -19,7 +19,7 @@ set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
 set colorcolumn=72
 autocmd FileType text setlocal colorcolumn=0
 set wrap
-set backspace=eol,start
+set backspace=eol,start,indent
 set foldmethod=indent foldlevelstart=10
 " Don't auto-insert comment leader characters on o/O commands
 augroup NoAutoCommentLeaders
